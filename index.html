@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링글(Ringle) 서비스 리뷰 분석 대시보드</title>
+
+    <!-- SEO 메타태그 -->
+    <meta name="description" content="링글(Ringle) AI 영어 서비스 리뷰 분석 대시보드. 2021-2025년 사용자 리뷰 트렌드, 감성 분석, 경쟁사 비교 데이터를 제공합니다.">
+    <meta name="keywords" content="링글, Ringle, 영어학습, AI영어, 화상영어, 리뷰분석, 영어회화">
+    <meta name="author" content="Review Analysis Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (소셜 미디어 공유용) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="링글(Ringle) 서비스 리뷰 분석 대시보드">
+    <meta property="og:description" content="AI 영어 서비스 기획을 위한 링글 리뷰 분석 및 경쟁사 비교 데이터">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:url" content="">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="링글(Ringle) 서비스 리뷰 분석 대시보드">
+    <meta name="twitter:description" content="AI 영어 서비스 기획을 위한 링글 리뷰 분석 및 경쟁사 비교 데이터">
+    <meta name="twitter:image" content="assets/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- External Resources -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>링글(Ringle) 서비스 리뷰 분석 대시보드</h1>
+            <p>AI 영어 서비스 기획을 위한 경쟁사 분석 자료 | 데이터 수집 기간: 2021-2025</p>
+        </header>
+
+        <!-- 핵심 통계 -->
+        <div class="card full-width">
+            <div class="card-header">
+                <span class="card-title">핵심 통계 요약</span>
+                <span class="card-badge">실시간 데이터</span>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">4.7</div>
+                    <div class="stat-label">평균 앱 평점</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2,000+</div>
+                    <div class="stat-label">원어민 튜터 수</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">20,000+</div>
+                    <div class="stat-label">활성 사용자</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">100억+</div>
+                    <div class="stat-label">2024 상반기 결제액</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- 연도별 리뷰 트렌드 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">연도별/반기별 리뷰 트렌드</span>
+                </div>
+                <div class="timeline-tabs">
+                    <button class="timeline-tab active" onclick="filterByYear('all')">전체</button>
+                    <button class="timeline-tab" onclick="filterByYear('2021')">2021</button>
+                    <button class="timeline-tab" onclick="filterByYear('2022')">2022</button>
+                    <button class="timeline-tab" onclick="filterByYear('2023')">2023</button>
+                    <button class="timeline-tab" onclick="filterByYear('2024')">2024</button>
+                    <button class="timeline-tab" onclick="filterByYear('2025')">2025</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- 문제 카테고리 분류 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">문제 카테고리 분류</span>
+                </div>
+                <ul class="category-list">
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon negative">💰</div>
+                            <span>높은 가격</span>
+                        </div>
+                        <span class="category-count">42건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon negative">📱</div>
+                            <span>앱 오류/버그</span>
+                        </div>
+                        <span class="category-count">28건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon negative">📅</div>
+                            <span>예약 시스템 불편</span>
+                        </div>
+                        <span class="category-count">19건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon negative">🔥</div>
+                            <span>앱 발열 문제</span>
+                        </div>
+                        <span class="category-count">12건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon negative">📝</div>
+                            <span>환불 정책 불만</span>
+                        </div>
+                        <span class="category-count">15건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon neutral">⏰</div>
+                            <span>튜터 시간대 제한</span>
+                        </div>
+                        <span class="category-count">11건</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 긍정적 피드백 카테고리 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">긍정적 피드백 카테고리</span>
+                </div>
+                <ul class="category-list">
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon positive">📚</div>
+                            <span>교재 품질</span>
+                        </div>
+                        <span class="category-count">89건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon positive">👨‍🏫</div>
+                            <span>튜터 전문성</span>
+                        </div>
+                        <span class="category-count">76건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon positive">✍️</div>
+                            <span>실시간 피드백</span>
+                        </div>
+                        <span class="category-count">68건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon positive">📊</div>
+                            <span>AI 분석 리포트</span>
+                        </div>
+                        <span class="category-count">45건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon positive">💼</div>
+                            <span>비즈니스 영어</span>
+                        </div>
+                        <span class="category-count">52건</span>
+                    </li>
+                    <li class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon positive">🎯</div>
+                            <span>학습 효과</span>
+                        </div>
+                        <span class="category-count">61건</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 감성 분석 차트 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">리뷰 감성 분석</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="sentimentChart"></canvas>
+                </div>
+            </div>
+
+            <!-- 경쟁사 비교 -->
+            <div class="card full-width">
+                <div class="card-header">
+                    <span class="card-title">경쟁사 비교 분석</span>
+                    <span class="card-badge">2024년 기준</span>
+                </div>
+                <div class="competitor-comparison">
+                    <div class="competitor-card">
+                        <div class="competitor-name">링글 (Ringle)</div>
+                        <div class="competitor-rating ringle">4.7/5.0</div>
+                        <div style="font-size: 0.9rem; color: #666;">
+                            <p>✓ 아이비리그 출신 튜터</p>
+                            <p>✓ 실시간 교정 시스템</p>
+                            <p>✓ 양질의 교재 콘텐츠</p>
+                            <p style="color: #c62828;">✗ 높은 가격대</p>
+                        </div>
+                    </div>
+                    <div class="competitor-card">
+                        <div class="competitor-name">캠블리 (Cambly)</div>
+                        <div class="competitor-rating cambly">4.5/5.0</div>
+                        <div style="font-size: 0.9rem; color: #666;">
+                            <p>✓ 합리적인 가격</p>
+                            <p>✓ 그룹 수업 가능</p>
+                            <p>✓ 시험 대비 전문가</p>
+                            <p style="color: #c62828;">✗ 튜터 품질 편차</p>
+                        </div>
+                    </div>
+                    <div class="competitor-card">
+                        <div class="competitor-name">스픽 (Speak)</div>
+                        <div class="competitor-rating speak">4.6/5.0</div>
+                        <div style="font-size: 0.9rem; color: #666;">
+                            <p>✓ 저렴한 가격</p>
+                            <p>✓ AI 기반 학습</p>
+                            <p>✓ 무제한 연습</p>
+                            <p style="color: #c62828;">✗ 실제 대화 부재</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 상세 리뷰 테이블 -->
+            <div class="card full-width">
+                <div class="card-header">
+                    <span class="card-title">주요 리뷰 상세 내용</span>
+                </div>
+                <div class="filter-section">
+                    <select class="filter-select" id="yearFilter" onchange="filterReviews()">
+                        <option value="all">전체 연도</option>
+                        <option value="2021">2021년</option>
+                        <option value="2022">2022년</option>
+                        <option value="2023">2023년</option>
+                        <option value="2024">2024년</option>
+                        <option value="2025">2025년</option>
+                    </select>
+                    <select class="filter-select" id="halfFilter" onchange="filterReviews()">
+                        <option value="all">전체 반기</option>
+                        <option value="h1">상반기</option>
+                        <option value="h2">하반기</option>
+                    </select>
+                    <select class="filter-select" id="sentimentFilter" onchange="filterReviews()">
+                        <option value="all">전체 감성</option>
+                        <option value="positive">긍정</option>
+                        <option value="negative">부정</option>
+                        <option value="neutral">중립</option>
+                    </select>
+                    <select class="filter-select" id="sourceFilter" onchange="filterReviews()">
+                        <option value="all">전체 소스</option>
+                        <option value="blog">블로그</option>
+                        <option value="playstore">Play Store</option>
+                        <option value="appstore">App Store</option>
+                        <option value="community">커뮤니티</option>
+                    </select>
+                </div>
+                <table class="review-table" id="reviewTable">
+                    <thead>
+                        <tr>
+                            <th>연도/반기</th>
+                            <th>출처</th>
+                            <th>카테고리</th>
+                            <th>내용 요약</th>
+                            <th>감성</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reviewTableBody">
+                        <!-- JavaScript로 동적 생성 -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 시장 정보 -->
+            <div class="card full-width">
+                <div class="market-info">
+                    <h3>한국 AI 영어 학습 시장 현황 (2024-2025)</h3>
+                    <div class="market-stats">
+                        <div class="market-stat">
+                            <div class="market-stat-value">334.5억$</div>
+                            <div class="market-stat-label">글로벌 영어학습 시장 규모 (2024)</div>
+                        </div>
+                        <div class="market-stat">
+                            <div class="market-stat-value">11.37%</div>
+                            <div class="market-stat-label">연평균 성장률 (CAGR)</div>
+                        </div>
+                        <div class="market-stat">
+                            <div class="market-stat-value">30%+</div>
+                            <div class="market-stat-label">한국 AI 도입률 (근로 인구)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 인사이트 섹션 -->
+            <div class="card full-width">
+                <div class="card-header">
+                    <span class="card-title">AI 영어 서비스 기획 인사이트</span>
+                    <span class="card-badge">20% 시장점유율 목표</span>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-title">링글 사용자 Pain Points에서 발견한 기회</div>
+                    <ul class="insight-list">
+                        <li class="insight-item"><strong>가격 장벽:</strong> 링글 대비 50% 이하 가격으로 유사 품질 제공 시 대규모 전환 가능</li>
+                        <li class="insight-item"><strong>예약 불편:</strong> AI 기반 자동 매칭으로 대기 시간 없는 즉시 학습 경험 제공</li>
+                        <li class="insight-item"><strong>앱 안정성:</strong> 경량화된 앱으로 발열/오류 문제 해결</li>
+                        <li class="insight-item"><strong>학습 강제성:</strong> 게이미피케이션 + 커뮤니티 기능으로 지속적 동기부여</li>
+                    </ul>
+                </div>
+                <div class="recommendation-section">
+                    <div class="recommendation-title">20% 시장점유율 달성을 위한 전략 제안</div>
+                    <div class="recommendation-grid">
+                        <div class="recommendation-item">
+                            <h4>1. 하이브리드 학습 모델</h4>
+                            <p>AI 튜터 무제한 + 원어민 실시간 수업 조합으로 비용 효율성과 학습 효과 모두 확보</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>2. 직장인 타겟팅</h4>
+                            <p>링글 성공 요인인 비즈니스 영어에 집중. 기업 B2B 제휴로 안정적 매출 확보</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>3. 콘텐츠 차별화</h4>
+                            <p>매주 업데이트되는 트렌디한 교재는 링글의 핵심 강점. 이를 AI로 자동 생성하여 비용 절감</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>4. 피드백 시스템 강화</h4>
+                            <p>실시간 AI 교정 + 수업 후 상세 분석 리포트로 학습 효과 가시화</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>데이터 출처: 네이버 블로그, Google Play Store, App Store, 티스토리, 브런치, 클리앙, 블라인드 등</p>
+            <p>최종 업데이트: 2025년 1월</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/data.js"></script>
+    <script src="scripts/charts.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

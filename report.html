@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>링글(Ringle) 서비스 리뷰 분석 개발 보고서</title>
+  <style>
+    @page { size: A4; margin: 20mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color: #1f2937;
+      margin: 0;
+      background: #f3f4f6;
+    }
+    .page {
+      max-width: 900px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 28px 32px;
+      border-radius: 12px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    h1 { font-size: 26px; margin: 0 0 8px; }
+    h2 { font-size: 18px; margin: 28px 0 10px; border-left: 4px solid #2563eb; padding-left: 10px; }
+    h3 { font-size: 15px; margin: 18px 0 6px; }
+    p { margin: 6px 0; line-height: 1.6; }
+    .meta {
+      color: #4b5563;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .summary-card {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+    .summary-value { font-size: 20px; font-weight: 700; color: #1d4ed8; }
+    .summary-label { font-size: 12px; color: #6b7280; margin-top: 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    th { background: #f1f5f9; }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+    .list { margin: 6px 0 0 0; padding-left: 18px; }
+    .section-note {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 10px 12px;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #92400e;
+    }
+    .footer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: #6b7280;
+      text-align: right;
+    }
+    @media print {
+      body { background: #ffffff; }
+      .page { box-shadow: none; margin: 0; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>링글(Ringle) 서비스 리뷰 분석 개발 보고서</h1>
+    <div class="meta">
+      AI 영어 서비스 기획을 위한 경쟁사 분석 대시보드 구축 문서<br>
+      데이터 수집 기간: 2021-2025 | 작성일: 2026-01-18
+    </div>
+
+    <h2>1. 프로젝트 개요</h2>
+    <p><strong>목적</strong> 경쟁사(링글) 리뷰 데이터를 기반으로 핵심 강점/이슈를 구조화하고, 신규 AI 영어 서비스 기획을 위한 인사이트를 제공하는 대시보드 구축.</p>
+    <p><strong>범위</strong> 정량 요약, 카테고리 분류, 감성 분석, 경쟁사 비교, 상세 리뷰 테이블, 인사이트/전략 제안.</p>
+    <p><strong>데이터 출처</strong> 네이버 블로그, Google Play Store, App Store, 커뮤니티(티스토리/브런치/클리앙/블라인드 등).</p>
+
+    <h2>2. 핵심 지표 요약</h2>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="summary-value">4.7</div>
+        <div class="summary-label">평균 앱 평점</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-value">2,000+</div>
+        <div class="summary-label">원어민 튜터 수</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-value">20,000+</div>
+        <div class="summary-label">활성 사용자</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-value">100억+</div>
+        <div class="summary-label">2024 상반기 결제액</div>
+      </div>
+    </div>
+
+    <h2>3. 리뷰 분석 결과</h2>
+    <h3>3-1. 부정 이슈 카테고리</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>카테고리</th>
+          <th>건수</th>
+          <th>요약</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>높은 가격</td><td>42건</td><td>가격 장벽으로 인한 이탈/불만</td></tr>
+        <tr><td>앱 오류/버그</td><td>28건</td><td>업데이트 이후 크래시/불안정</td></tr>
+        <tr><td>예약 시스템 불편</td><td>19건</td><td>인기 튜터 예약 경쟁 및 절차 복잡</td></tr>
+        <tr><td>환불 정책 불만</td><td>15건</td><td>만료 시 자동 소멸 및 환불 불가</td></tr>
+        <tr><td>앱 발열 문제</td><td>12건</td><td>녹음/재생 과정에서 발열 과다</td></tr>
+        <tr><td>튜터 시간대 제한</td><td>11건</td><td>시간대 편중 및 선택 폭 제한</td></tr>
+      </tbody>
+    </table>
+
+    <h3>3-2. 긍정 피드백 카테고리</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>카테고리</th>
+          <th>건수</th>
+          <th>요약</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>교재 품질</td><td>89건</td><td>주간 업데이트되는 양질의 교재</td></tr>
+        <tr><td>튜터 전문성</td><td>76건</td><td>고학력/전문성 기반 수업 신뢰도</td></tr>
+        <tr><td>실시간 피드백</td><td>68건</td><td>실시간 교정 및 맞춤형 코칭</td></tr>
+        <tr><td>학습 효과</td><td>61건</td><td>성과 체감 및 목표 달성 후기</td></tr>
+        <tr><td>비즈니스 영어</td><td>52건</td><td>직장인/실무 중심 콘텐츠</td></tr>
+        <tr><td>AI 분석 리포트</td><td>45건</td><td>수업 후 분석 리포트 제공</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. 경쟁사 비교 (2024년 기준)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>서비스</th>
+          <th>평점</th>
+          <th>강점</th>
+          <th>약점</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>링글 (Ringle)</td>
+          <td>4.7/5.0</td>
+          <td>아이비리그 출신 튜터, 실시간 교정, 고품질 콘텐츠</td>
+          <td>높은 가격대</td>
+        </tr>
+        <tr>
+          <td>캠블리 (Cambly)</td>
+          <td>4.5/5.0</td>
+          <td>합리적 가격, 그룹 수업</td>
+          <td>튜터 품질 편차</td>
+        </tr>
+        <tr>
+          <td>스픽 (Speak)</td>
+          <td>4.6/5.0</td>
+          <td>저렴한 가격, AI 기반 학습</td>
+          <td>실제 대화 부재</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. 시장 정보</h2>
+    <p><span class="tag">글로벌</span> 영어학습 시장 규모(2024): 334.5억$</p>
+    <p><span class="tag">성장률</span> 연평균 성장률(CAGR): 11.37%</p>
+    <p><span class="tag">한국</span> AI 도입률(근로 인구 기준): 30%+</p>
+
+    <h2>6. 인사이트 및 전략 제안</h2>
+    <ul class="list">
+      <li>가격 장벽 해소: 링글 대비 50% 이하 가격으로 유사 품질 제공 시 전환 가능성 높음</li>
+      <li>예약 불편 개선: AI 자동 매칭으로 대기 없는 즉시 학습 제공</li>
+      <li>앱 안정성 강화: 경량화로 발열/오류 이슈 해결</li>
+      <li>학습 강제성 확보: 게이미피케이션 + 커뮤니티로 지속 참여 유도</li>
+    </ul>
+
+    <h2>7. 구현 내용 요약</h2>
+    <p><strong>구성</strong> 카드형 대시보드 레이아웃, 반응형 그리드, 핵심 지표/카테고리/차트/테이블 구성.</p>
+    <p><strong>기능</strong> 연도·반기·감성·소스 필터, 동적 테이블 렌더링, 라인 차트/도넛 차트 시각화.</p>
+    <p><strong>기술</strong> HTML/CSS/JavaScript, Chart.js 시각화, 클라이언트 단 데이터 렌더링.</p>
+
+    <h2>8. 데이터 구조 및 처리</h2>
+    <p><strong>리뷰 데이터 필드</strong> year, half, source, category, content, sentiment.</p>
+    <p><strong>처리 로직</strong> 필터 조합 적용 후 테이블 재렌더링, 연도 탭 클릭 시 필터 자동 반영.</p>
+
+    <h2>9. 한계 및 후속 과제</h2>
+    <ul class="list">
+      <li>현 단계는 샘플 기반 데이터 구조로 실제 수집 파이프라인 구축 필요</li>
+      <li>감성/카테고리 분류 정확도 향상을 위한 모델 적용 필요</li>
+      <li>실시간 업데이트를 위한 ETL/대시보드 자동화 설계 필요</li>
+    </ul>
+    <div class="section-note">비고: 본 보고서는 제공된 대시보드(HTML/JS) 구현 내용을 문서화한 결과입니다.</div>
+
+    <div class="footer">문서 파일: report.html → PDF 출력용</div>
+  </div>
+</body>
+</html>
