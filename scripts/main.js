@@ -167,6 +167,10 @@ async function loadDashboardData() {
         
     } catch (error) {
         console.warn('데이터 로드 실패, 기본 데이터를 사용합니다:', error);
+        const topIssuesList = document.getElementById('topIssuesList');
+        if (topIssuesList) {
+            topIssuesList.innerHTML = '<div class="col-12 text-center text-muted">데이터를 불러오지 못했습니다.</div>';
+        }
         // 데이터 로드 실패 시 차트 초기화 (빈 상태 또는 기본값)
         if (!trendChart) trendChart = initTrendChart('trendChart');
         if (!sentimentChart) sentimentChart = initSentimentChart('sentimentChart');

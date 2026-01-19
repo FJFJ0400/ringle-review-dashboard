@@ -11,7 +11,20 @@
     <!-- WordCloud.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
     <style>
-        body { background-color: #f8f9fa; }
+        html, body { height: 100%; }
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .page-shell {
+            flex: 1 1 auto;
+            overflow-y: auto;
+        }
+        .page-shell .container {
+            padding-bottom: 32px;
+        }
         .card { border: none; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
         .stat-value { font-size: 2rem; font-weight: bold; color: #2c3e50; }
         .stat-label { font-size: 0.9rem; color: #7f8c8d; }
@@ -31,7 +44,8 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="page-shell">
+        <div class="container">
         <!-- KPIs -->
         <div class="row mb-4">
             <div class="col-md-3">
@@ -138,6 +152,7 @@
                     </tbody>
                 </table>
             </div>
+        </div>
         </div>
     </div>
 
