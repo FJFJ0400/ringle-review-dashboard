@@ -10,13 +10,13 @@
     "keywordDelta": "+12%"
   },
   "trends": [
-    { "date": "01/01", "count": 120 },
-    { "date": "01/02", "count": 160 },
-    { "date": "01/03", "count": 140 },
-    { "date": "01/04", "count": 210 },
-    { "date": "01/05", "count": 190 },
-    { "date": "01/06", "count": 230 },
-    { "date": "01/07", "count": 200 }
+    { "date": "2025-01-01", "count": 120 },
+    { "date": "2025-01-02", "count": 160 },
+    { "date": "2025-01-03", "count": 140 },
+    { "date": "2025-01-04", "count": 210 },
+    { "date": "2025-01-05", "count": 190 },
+    { "date": "2025-01-06", "count": 230 },
+    { "date": "2025-01-07", "count": 200 }
   ],
   "sentiment": {
     "positive": 72,
@@ -33,7 +33,7 @@
   "reviews": [
     {
       "channel": "App Store",
-      "date": "2026-01-07",
+      "date": "2025-01-07",
       "title": "발음 피드백이 좋아요",
       "text": "AI 피드백이 바로 반영돼서 학습 방향을 잡기 쉬워요.",
       "sentiment": "positive",
@@ -41,7 +41,7 @@
     },
     {
       "channel": "Google Play",
-      "date": "2026-01-07",
+      "date": "2025-01-07",
       "title": "결제 오류 문의",
       "text": "프로모션 코드 적용이 안 돼서 문의했어요.",
       "sentiment": "negative",
@@ -49,7 +49,7 @@
     },
     {
       "channel": "Blog",
-      "date": "2026-01-06",
+      "date": "2025-01-06",
       "title": "AI 튜터 추천",
       "text": "개인 맞춤 추천이 생각보다 정확하네요.",
       "sentiment": "positive",
@@ -57,7 +57,7 @@
     },
     {
       "channel": "Community",
-      "date": "2026-01-06",
+      "date": "2025-01-06",
       "title": "알림 시간대",
       "text": "야간 알림이 잦아서 조절할 수 있으면 좋겠어요.",
       "sentiment": "neutral",
@@ -65,7 +65,7 @@
     },
     {
       "channel": "App Store",
-      "date": "2026-01-05",
+      "date": "2025-01-05",
       "title": "튜터 품질",
       "text": "튜터 매칭 속도가 빨라서 만족합니다.",
       "sentiment": "positive",
@@ -73,7 +73,7 @@
     },
     {
       "channel": "Community",
-      "date": "2026-01-05",
+      "date": "2025-01-05",
       "title": "환불 절차",
       "text": "환불 절차가 조금 복잡해 보여요.",
       "sentiment": "negative",
