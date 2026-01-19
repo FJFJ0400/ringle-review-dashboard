@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ringle Voice Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/common.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app" data-theme="light">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">RVI</span>
+        <div>
+          <h1>Ringle Voice Insights</h1>
+          <p>AI VOC Intelligence</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="nav-link active" href="index.html">대시보드</a>
+        <a class="nav-link" href="pages/sources.html">데이터 소스</a>
+        <a class="nav-link" href="pages/explore.html">VOC 탐색</a>
+        <a class="nav-link" href="pages/reports.html">리포트</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="status-pill">
+          <span class="dot"></span>
+          실시간 수집 중
+        </div>
+        <button class="ghost" data-action="open-settings">설정</button>
+      </div>
+    </aside>
+
+    <div class="page">
+      <header class="topbar">
+        <div>
+          <h2>대시보드</h2>
+          <p>링글 AI 서비스의 고객 목소리를 실시간으로 확인하세요.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="chip" data-action="refresh">데이터 새로고침</button>
+          <button class="toggle" data-action="toggle-theme" aria-label="테마 전환">
+            <span>라이트</span>
+            <div class="toggle-track">
+              <div class="toggle-thumb"></div>
+            </div>
+            <span>다크</span>
+          </button>
+          <button class="primary">인사이트 공유</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="metrics-grid" data-section="metrics">
+          <article class="metric-card">
+            <p>총 VOC 수</p>
+            <h3 data-metric="total">-</h3>
+            <span class="delta up" data-metric="totalDelta">-</span>
+          </article>
+          <article class="metric-card">
+            <p>긍정 비율</p>
+            <h3 data-metric="positiveRate">-</h3>
+            <span class="delta up" data-metric="positiveDelta">-</span>
+          </article>
+          <article class="metric-card">
+            <p>부정 이슈</p>
+            <h3 data-metric="negativeCount">-</h3>
+            <span class="delta down" data-metric="negativeDelta">-</span>
+          </article>
+          <article class="metric-card">
+            <p>주간 주요 키워드</p>
+            <h3 data-metric="topKeyword">-</h3>
+            <span class="delta neutral" data-metric="keywordDelta">-</span>
+          </article>
+        </section>
+
+        <section class="grid-two">
+          <article class="panel">
+            <header>
+              <div>
+                <h4>VOC 트렌드</h4>
+                <p>일별 리뷰 및 커뮤니티 언급량</p>
+              </div>
+              <div class="pill-group">
+                <button class="pill active" data-range="7">7일</button>
+                <button class="pill" data-range="30">30일</button>
+                <button class="pill" data-range="90">90일</button>
+              </div>
+            </header>
+            <canvas id="trendChart" height="220"></canvas>
+          </article>
+          <article class="panel">
+            <header>
+              <div>
+                <h4>감성 분포</h4>
+                <p>긍정/중립/부정 비율</p>
+              </div>
+              <button class="ghost" data-action="export">CSV 내보내기</button>
+            </header>
+            <canvas id="sentimentChart" height="220"></canvas>
+          </article>
+        </section>
+
+        <section class="grid-two">
+          <article class="panel">
+            <header>
+              <div>
+                <h4>핵심 키워드</h4>
+                <p>고객이 자주 언급하는 주제</p>
+              </div>
+              <button class="ghost">필터</button>
+            </header>
+            <div class="keyword-list" data-section="keywords"></div>
+          </article>
+          <article class="panel">
+            <header>
+              <div>
+                <h4>최근 VOC</h4>
+                <p>최근 24시간 내 수집된 리뷰</p>
+              </div>
+              <a class="ghost" href="pages/explore.html">전체 보기</a>
+            </header>
+            <div class="review-list" data-section="reviews"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="loading" data-loading>
+    <div class="spinner"></div>
+    <p>데이터를 불러오는 중...</p>
+  </div>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

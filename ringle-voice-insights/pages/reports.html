@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RVI | 인사이트 리포트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/variables.css" />
+  <link rel="stylesheet" href="../styles/common.css" />
+  <link rel="stylesheet" href="../styles/components.css" />
+</head>
+<body>
+  <div class="app" data-theme="light">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">RVI</span>
+        <div>
+          <h1>Ringle Voice Insights</h1>
+          <p>AI VOC Intelligence</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="../index.html">대시보드</a>
+        <a class="nav-link" href="sources.html">데이터 소스</a>
+        <a class="nav-link" href="explore.html">VOC 탐색</a>
+        <a class="nav-link active" href="reports.html">리포트</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="status-pill">
+          <span class="dot"></span>
+          실시간 수집 중
+        </div>
+        <button class="ghost" data-action="open-settings">설정</button>
+      </div>
+    </aside>
+
+    <div class="page">
+      <header class="topbar">
+        <div>
+          <h2>인사이트 리포트</h2>
+          <p>주요 이슈와 해결 제안을 공유합니다.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="toggle" data-action="toggle-theme" aria-label="테마 전환">
+            <span>라이트</span>
+            <div class="toggle-track">
+              <div class="toggle-thumb"></div>
+            </div>
+            <span>다크</span>
+          </button>
+          <button class="primary">PDF 내보내기</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="grid-two">
+          <article class="panel">
+            <header>
+              <div>
+                <h4>핫이슈 요약</h4>
+                <p>이번 주 가장 빈번한 VOC 클러스터</p>
+              </div>
+            </header>
+            <div class="card-list">
+              <div class="mini-card">
+                <h5>발음 피드백 개선</h5>
+                <p>AI 피드백 정확도 개선 요청이 22% 증가</p>
+              </div>
+              <div class="mini-card">
+                <h5>결제 오류</h5>
+                <p>프로모션 코드 적용 관련 문의 증가</p>
+              </div>
+              <div class="mini-card">
+                <h5>학습 리마인드</h5>
+                <p>푸시 알림 시간대 선호도 조사 필요</p>
+              </div>
+            </div>
+          </article>
+          <article class="panel">
+            <header>
+              <div>
+                <h4>액션 플랜</h4>
+                <p>부서별 대응 작업 리스트</p>
+              </div>
+            </header>
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="tag">제품</span>
+                <p>AI 발음 피드백 모델 업데이트 계획 수립</p>
+              </div>
+              <div class="timeline-item">
+                <span class="tag">마케팅</span>
+                <p>신규 할인 코드 안내 문구 개선</p>
+              </div>
+              <div class="timeline-item">
+                <span class="tag">CX</span>
+                <p>부정 리뷰 응대 템플릿 개선</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <header>
+            <div>
+              <h4>보고서 히스토리</h4>
+              <p>최근 6개월간 생성된 리포트</p>
+            </div>
+            <button class="ghost">캘린더 보기</button>
+          </header>
+          <div class="table">
+            <div class="table-row table-head">
+              <span>기간</span>
+              <span>핵심 키워드</span>
+              <span>요약</span>
+              <span>다운로드</span>
+            </div>
+            <div class="table-row">
+              <span>2026.01.01 ~ 2026.01.07</span>
+              <span>발음, 결제, 튜터 추천</span>
+              <span>부정 감성 12% 감소</span>
+              <span><button class="ghost">PDF</button></span>
+            </div>
+            <div class="table-row">
+              <span>2025.12.25 ~ 2025.12.31</span>
+              <span>스피킹, 튜터 만족도</span>
+              <span>리뷰 수 18% 증가</span>
+              <span><button class="ghost">PDF</button></span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="../scripts/main.js"></script>
+</body>
+</html>

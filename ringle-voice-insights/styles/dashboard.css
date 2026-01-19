@@ -1,0 +1,74 @@
+﻿.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+.metric-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.metric-card h3 {
+  font-size: 32px;
+}
+
+.delta {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.delta.up {
+  color: var(--success);
+}
+
+.delta.down {
+  color: var(--danger);
+}
+
+.delta.neutral {
+  color: var(--text-muted);
+}
+
+.keyword-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.keyword-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.review-card {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
