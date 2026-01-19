@@ -1,0 +1,11 @@
+{
+  "daily": [
+    { "date": "2025-01-01", "ringle": { "sentiment": { "positive": 0.60, "neutral": 0.22, "negative": 0.18 } } },
+    { "date": "2025-01-02", "ringle": { "sentiment": { "positive": 0.63, "neutral": 0.20, "negative": 0.17 } } },
+    { "date": "2025-01-03", "ringle": { "sentiment": { "positive": 0.58, "neutral": 0.25, "negative": 0.17 } } },
+    { "date": "2025-01-04", "ringle": { "sentiment": { "positive": 0.61, "neutral": 0.23, "negative": 0.16 } } },
+    { "date": "2025-01-05", "ringle": { "sentiment": { "positive": 0.64, "neutral": 0.19, "negative": 0.17 } } },
+    { "date": "2025-01-06", "ringle": { "sentiment": { "positive": 0.62, "neutral": 0.21, "negative": 0.17 } } },
+    { "date": "2025-01-07", "ringle": { "sentiment": { "positive": 0.59, "neutral": 0.24, "negative": 0.17 } } }
+  ]
+}

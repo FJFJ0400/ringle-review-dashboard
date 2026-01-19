@@ -1,0 +1,21 @@
+{
+  "ringle": {
+    "average_rating": 4.6,
+    "total": 1280,
+    "sentiment_distribution": {
+      "positive": 0.62,
+      "neutral": 0.21,
+      "negative": 0.17
+    }
+  },
+  "word_cloud": [
+    { "text": "tutor", "weight": 16 },
+    { "text": "price", "weight": 12 },
+    { "text": "schedule", "weight": 10 },
+    { "text": "feedback", "weight": 9 },
+    { "text": "app", "weight": 8 },
+    { "text": "quality", "weight": 7 },
+    { "text": "lesson", "weight": 6 },
+    { "text": "policy", "weight": 5 }
+  ]
+}

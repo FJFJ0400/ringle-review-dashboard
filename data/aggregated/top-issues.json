@@ -1,0 +1,46 @@
+{
+  "issues": [
+    {
+      "problem_type": "price",
+      "count": 34,
+      "summary": "Concerns about rising subscription cost and perceived value.",
+      "sentiment_score": -0.7
+    },
+    {
+      "problem_type": "reservation",
+      "count": 21,
+      "summary": "Difficulty booking popular tutors during peak times.",
+      "sentiment_score": -0.5
+    },
+    {
+      "problem_type": "app_stability",
+      "count": 17,
+      "summary": "Crashes and lag reported after recent app updates.",
+      "sentiment_score": -0.6
+    },
+    {
+      "problem_type": "refund_policy",
+      "count": 12,
+      "summary": "Confusion about refund eligibility and expiration rules.",
+      "sentiment_score": -0.4
+    }
+  ],
+  "ringle": {
+    "churn_alerts": [
+      {
+        "keyword": "price increase",
+        "count": 8,
+        "recent_examples": [
+          { "text": "Price went up again; considering other platforms." }
+        ]
+      },
+      {
+        "keyword": "booking difficulty",
+        "count": 5,
+        "recent_examples": [
+          { "text": "Hard to get slots with preferred tutors." }
+        ]
+      }
+    ]
+  }
+}
