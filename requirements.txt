@@ -1,0 +1,7 @@
+anthropic
+google-play-scraper
+app-store-scraper
+google-api-python-client
+requests
+pandas
+python-dotenv

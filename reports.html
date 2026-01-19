@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주간 인사이트 리포트 - Ringle Voice Insights</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <style>
+        /* Report Specific Styles */
+        .report-container {
+            max-width: 210mm; /* A4 width */
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        @media print {
+            body { background: white; }
+            .report-container {
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+            .no-print { display: none !important; }
+        }
+
+        .report-header {
+            border-bottom: 2px solid #6366F1;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .report-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .report-meta {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin: 30px 0 15px 0;
+            padding-left: 10px;
+            border-left: 4px solid #6366F1;
+        }
+
+        .summary-box {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .kpi-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #6366F1;
+            margin-bottom: 5px;
+        }
+
+        .kpi-label {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .issue-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .issue-table th {
+            background: #f3f4f6;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .issue-table td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .action-box {
+            border: 1px solid #e0e7ff;
+            background: #eef2ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .action-title {
+            font-weight: 700;
+            color: #4338ca;
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="controls no-print">
+        <button class="btn" onclick="window.print()" style="background: #6366F1; color: white;">PDF 저장 / 인쇄</button>
+        <button class="btn" onclick="history.back()" style="background: white;">돌아가기</button>
+    </div>
+
+    <div class="report-container">
+        <header class="report-header">
+            <div>
+                <div class="report-title">Ringle Voice Insights 주간 리포트</div>
+                <div style="margin-top: 5px; color: #666;">발행일: <span id="reportDate"></span></div>
+            </div>
+            <div class="report-meta">
+                기간: <span id="periodDate"></span>
+            </div>
+        </header>
+
+        <div class="summary-box">
+            <h3 style="margin-top: 0;">Executive Summary</h3>
+            <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.6;">
+                <li>이번 주 총 <strong>127건</strong>의 리뷰가 수집되었으며, 전주 대비 <strong>12% 증가</strong>했습니다.</li>
+                <li>'AI 피드백 정확도' 관련 불만이 지속적으로 제기되어(Top 1 이슈), 개선이 시급합니다.</li>
+                <li>경쟁사(스픽) 대비 '가격 만족도'는 긍정적이나, '무료 콘텐츠' 부족에 대한 언급이 있습니다.</li>
+            </ul>
+        </div>
+
+        <div class="section-title">핵심 지표 (Key Metrics)</div>
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-value">127</div>
+                <div class="kpi-label">신규 리뷰 수</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value">3.8</div>
+                <div class="kpi-label">평균 평점 (-0.1)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value">28%</div>
+                <div class="kpi-label">부정 리뷰 비율</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value" style="color: #ef4444;">8건</div>
+                <div class="kpi-label">이탈 위험 신호</div>
+            </div>
+        </div>
+
+        <div class="section-title">주요 이슈 (Top Issues)</div>
+        <table class="issue-table">
+            <thead>
+                <tr>
+                    <th width="20%">문제 유형</th>
+                    <th width="15%">언급 수</th>
+                    <th width="65%">주요 내용 및 대표 리뷰</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span style="color: #ef4444; font-weight: bold;">AI 정확도</span></td>
+                    <td>45건 (▲15%)</td>
+                    <td>
+                        문법 교정이 기계적이고 원어민 뉘앙스를 반영하지 못한다는 의견 다수.<br>
+                        <em style="color: #666; font-size: 13px;">"AI가 고쳐준 문장이 오히려 더 어색해요. 원어민 튜터랑 말이 다릅니다." (Play Store, 1/15)</em>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>앱 안정성</span></td>
+                    <td>22건 (▼5%)</td>
+                    <td>
+                        강의실 입장 시 튕김 현상 간헐적 발생. 안드로이드 특정 기종 집중.<br>
+                        <em style="color: #666; font-size: 13px;">"수업 시작 5분 전에 앱이 계속 꺼져서 당황했습니다." (CS 문의, 1/16)</em>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>가격/구독</span></td>
+                    <td>18건 ( - )</td>
+                    <td>
+                        장기 구독 할인 요청 및 경쟁사 대비 가격 부담 언급.<br>
+                        <em style="color: #666; font-size: 13px;">"스픽보다 비싼데 AI 기능은 비슷한 것 같아요." (블로그, 1/14)</em>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">추천 액션 (Recommended Actions)</div>
+        <div class="action-box">
+            <div class="action-title">🎯 이번 주 우선순위</div>
+            <div style="margin-bottom: 15px;">
+                <strong>1. [HIGH] AI 피드백 모델 튜닝</strong><br>
+                문법 오류 지적 로직을 완화하고, '원어민스러운 표현' 제안 기능을 강화하여 정확도 불만 해소 필요.
+            </div>
+            <div>
+                <strong>2. [MED] 안드로이드 앱 안정성 패치</strong><br>
+                갤럭시 S23/24 시리즈에서의 크래시 로그 집중 분석 및 핫픽스 배포 권장.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 날짜 자동 설정
+        const today = new Date();
+        document.getElementById('reportDate').textContent = today.toLocaleDateString();
+        
+        const lastWeek = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+        document.getElementById('periodDate').textContent = 
+            `${lastWeek.toLocaleDateString()} ~ ${today.toLocaleDateString()}`;
+    </script>
+</body>
+</html>
