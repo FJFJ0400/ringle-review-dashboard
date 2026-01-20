@@ -7,6 +7,7 @@ import { formatNumber, formatPercent, debounce } from "./utils.js";
 const state = {
   data: null,
   filters: {
+    year: "2025",
     channel: "",
     sentiment: "",
     query: ""
@@ -26,6 +27,7 @@ const elements = {
 };
 
 const filterInputs = {
+  year: document.querySelector("[data-filter=\"year\"]"),
   channel: document.querySelector("[data-filter=\"channel\"]"),
   sentiment: document.querySelector("[data-filter=\"sentiment\"]"),
   query: document.querySelector("[data-filter=\"query\"]")
@@ -117,10 +119,11 @@ function bindFilters() {
 
   resetButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      state.filters = { channel: "", sentiment: "", query: "" };
+      state.filters = { year: "2025", channel: "", sentiment: "", query: "" };
       Object.values(filterInputs).forEach((input) => {
         if (input) input.value = "";
       });
+      if (filterInputs.year) filterInputs.year.value = "2025";
       updateExploreView();
     });
   });
